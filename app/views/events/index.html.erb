@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @event.each do |eveeventt| %>
+    <% @event.each do |event| %>
       <tr>
         <td><%= event.title %></td>
         <td><%= event.description %></td>
@@ -28,16 +28,5 @@
 </table>
 
 <br>
-
-
-
-<% if member_signed_in? %>
-  <%= link_to 'New Event', new_event_path %>
-  <%= link_to 'Send Invitations', new_invitation_path %>
-  <%= link_to "Log out", destroy_use_session_path, method: :delete, :class => 'link' %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'link' %>
-  <%= link_to "Log in", new_user_session_path, :class => 'link' %>
-<% end %>
 
 
